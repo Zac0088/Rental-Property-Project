@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Renters</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/assets/styles/style.css">
-  </head>
-  <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/index.html">
-          <img
-            src="/Images/house-solid.svg"
-            width="112"
-            height="28"
-          />
-        </a>
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renters</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="/assets/styles/style.css">
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/index.html">
+        <img src="/Images/house-solid.svg" width="112" height="28" />
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/index.html"> Home </a>
+        <a class="navbar-item" href="/Pages/favourites.html"> My Listings </a>
+        <a class="navbar-item" href="/Pages/listings.html"> Search </a>ß
       </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-         <a class="navbar-item" href="/index.html"> Home </a>
-        <a class="navbar-item" href="/Pages/favourites.html"> My Listings  </a>
-          <a class="navbar-item" href="/Pages/listings.html"> Search </a>ß
-          </div>
-        </div>
-<!-- 
+    </div>
+    <!-- 
         <div class="navbar-end">
           <div class="navbar-item">
            <form >
@@ -51,20 +40,20 @@
                  </div>
             </div>
           </div> -->
-        </div>
-      </div>
-    </nav>
+    </div>
+    </div>
+  </nav>
 
-<div id="slogan">
+  <div id="slogan">
     <h1 class="is-size-1 has-text-weight-bold has-text-info">Find a new</h1>
-    <p class="is-size-5" >"forever" landlord</p>
-</div>
+    <p class="is-size-5">"forever" landlord</p>
+  </div>
 
   <div class="field searchBox">
-  <div class="control">
-    <input class="input" type="text" placeholder="Sydney,Manly">
+    <div class="control">
+      <input class="input" type="text" placeholder="Sydney,Manly">
+    </div>
   </div>
-</div>
 
 
 
@@ -73,179 +62,180 @@
 
 
 
-<div class="modal ">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button  id="closeBtn" class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda sunt, earum natus sit quod accusantium iste architecto. Excepturi ab fuga et. Veritatis aliquid iure eaque voluptatibus excepturi. Cumque, eveniet consectetur?</p>
-    </section>
-    <footer class="modal-card-foot">
-    </footer>
+  <div class="modal ">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button id="closeBtn" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda sunt, earum natus sit quod accusantium
+          iste architecto. Excepturi ab fuga et. Veritatis aliquid iure eaque voluptatibus excepturi. Cumque, eveniet
+          consectetur?</p>
+      </section>
+      <footer class="modal-card-foot">
+      </footer>
+    </div>
   </div>
-</div>
 
 
 
 
-<div class="tile is-ancestor p-6">
-  <div class="tile is-parent">
-    <article   id="viewListing1"  class="tile is-child box">
-      <p class="title">Listing 1</p>
-      <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-         <li>Description</li>
-        </ul>
+  <div class="tile is-ancestor p-6">
+    <div class="tile is-parent">
+      <article id="viewListing1" class="tile is-child box">
+        <p class="title">Listing 1</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>Seller</li>
+          </ul>
+          <footer>
+            <button class="button">view</button>
+            <button id="saveListing1" class="button saveBtn">save</button>
+          </footer>
+        </div>
+
+
+      </article>
     </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-     <footer>
-        <button class="button">view</button>
-        <button id="saveListing1" class="button saveBtn">save</button>
-     </footer>
-</div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Listing 2</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>Seller</li>
+          </ul>
+          <footer>
+            <button id="viewListing2" class="view button">view</button>
+            <button id="saveListing2" class="button">save</button>
+          </footer>
+        </div>
 
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Listing 3</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>Seller</li>
+          </ul>
+          <footer>
+            <button id="viewListing3" class="test button">view</button>
+            <button id="saveListing3" class="button">save</button>
+          </footer>
+        </div>
 
-    </article>
+      </article>
+    </div>
   </div>
-  <div class="tile is-parent">
-    <article  class="tile is-child box">
-      <p class="title">Listing 2</p>
-      <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-        <li>Description</li>
-        </ul>
-    </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-        <footer>
-        <button id="viewListing2"  class="view button">view</button>
-        <button id="saveListing2" class="button">save</button>
-     </footer>
-    </div>
 
-    </article>
-  </div>
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">Listing 3</p>
-      <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-         <li>Description</li>
-        </ul>
-    </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-        <footer>
-        <button id="viewListing3" class="test button">view</button>
-        <button id="saveListing3" class="button">save</button>
-     </footer>
-    </div>
+  <div class="tile is-ancestor p-6">
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Listing 4</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li id="Location">Location</li>
+            <li id="Description">Description</li>
+            <li id="Price">Price</li>
+            <li id="Seller">Seller</li>
+          </ul>
+          <footer>
+            <button id="viewListing4" class="button">view</button>
+            <button id="saveListing4" class="button">save</button>
+          </footer>
+        </div>
 
-    </article>
-  </div>
-</div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Listing 5</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>Seller</li>
+          </ul>
+          <footer>
+            <button id="viewListing5" class="test button">view</button>
+            <button id="saveListing5" class="button">save</button>
+          </footer>
+        </div>
 
-<div class="tile is-ancestor p-6">
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">Listing 4</p>
-   <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-         <li>Description</li>
-        </ul>
+      </article>
     </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-        <footer>
-        <button id="viewListing4" class="button">view</button>
-        <button id="saveListing4"  class="button">save</button>
-     </footer>
-</div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Listing 6</p>
+        <div class="subtitle">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+          </ul>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Location</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>Seller</li>
+          </ul>
+          <footer>
+            <button id="viewListing6" class="button">view</button>
+            <button id="saveListing6" class="button">save</button>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js"></script>
+  <script src="/domain.js"></script>
+</body>
 
-    </article>
-  </div>
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">Listing 5</p>
-   <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-         <li>Description</li>
-        </ul>
-    </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-        <footer>
-        <button id="viewListing5" class="test button">view</button>
-        <button id="saveListing5" class="button">save</button>
-     </footer>
-    </div>
-
-    </article>
-  </div>
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">Listing 6</p>
-   <div class="subtitle"> 
-        <ul>
-        <li>Location</li>
-         <li>Description</li>
-        </ul>
-    </div>
-         <div class="content">
-       <ul>
-        <li>Location</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Seller</li>
-    </ul>
-        <footer>
-        <button  id="viewListing6" class="button">view</button>
-        <button id="saveListing6" class="button">save</button>
-     </footer>
-    </div>
-    </article>
-  </div>
-</div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-      src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
-      crossorigin="anonymous"
-    ></script>
-<script src="/assets/js/script.js"></script>
-  </body>
 </html>
