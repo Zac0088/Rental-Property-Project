@@ -9,14 +9,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/style/style.css">
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/index.html">
           <img
-            src="/Images/house-solid.svg"
+            src="/house-solid.svg"
             width="112"
             height="28"
           />
@@ -35,9 +35,9 @@
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-         <a class="navbar-item" href="/index.html"> Home </a>
-        <a class="navbar-item" href="/Pages/favourites.html"> My Listings  </a>
-          <a class="navbar-item" href="/Pages/listings.html"> Search </a>ß
+        <a class="navbar-item" href="/index.html"> Home </a>
+        <a class="navbar-item" href="/favourites.html"> My Listings  </a>
+          <a class="navbar-item" href="/listings.html"> Search </a>
           </div>
         </div>
 <!-- 
@@ -54,7 +54,7 @@
         </div>
       </div>
     </nav>
-
+<div class="listingBackground" >
 <div id="slogan">
     <h1 class="is-size-1 has-text-weight-bold has-text-info">Find a new</h1>
     <p class="is-size-5" >"forever" landlord</p>
@@ -64,6 +64,7 @@
   <div class="control">
     <input class="input" type="text" placeholder="Sydney,Manly">
   </div>
+</div>
 </div>
 
 
@@ -90,10 +91,10 @@
 
 
 
-
-<div class="tile is-ancestor p-6">
+<main >
+<div class="tile is-ancestor pt-6">
   <div class="tile is-parent">
-    <article   id="viewListing1"  class="tile is-child box">
+    <article class="tile is-child box">
       <p class="title">Listing 1</p>
       <div class="subtitle"> 
         <ul>
@@ -109,7 +110,7 @@
         <li>Seller</li>
     </ul>
      <footer>
-        <button class="button">view</button>
+        <button  id="viewListing1"  class="button">view</button>
         <button id="saveListing1" class="button saveBtn">save</button>
      </footer>
 </div>
@@ -240,6 +241,7 @@
     </article>
   </div>
 </div>
+</main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
       src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
