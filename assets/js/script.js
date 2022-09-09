@@ -41,6 +41,7 @@ var getListing = function (postcode) {
       for (var i = 0; i < data.length; i++) {
         var result = data[i];
         renderListing(result.listing);
+        renderModal(result.listing);
       }
     });
 };
@@ -94,6 +95,7 @@ var renderListing = function (listing) {
 
 var renderModal = function (listing) {
   var modalEL = $("#img-modal").addClass("modal").html(`
+
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -101,7 +103,7 @@ var renderModal = function (listing) {
       <button  id="close-button" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <img src="">
+      <img src="${listing.media[0].url}">
     </section>
     <footer class="modal-card-foot">
     </footer>
