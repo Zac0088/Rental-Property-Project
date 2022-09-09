@@ -70,7 +70,8 @@ var renderListing = function (listing) {
                 <li>${listing.advertiser.name}</li>
             </ul>
             <footer>
-                <button class="view-button button">view</button>
+                <button id="view-button" class="button">view</button>
+                <button id="save-button" class="button">save</button>
             </footer>
             </div>
         </div>
@@ -81,37 +82,50 @@ var renderListing = function (listing) {
   //event del to save button
   $("#listings-results").append(listingEl);
 
-  listingEl.on("click", function () {
-    console.log("CLICK", listing);
-    //save to local storage go here
+  listingEl.on("click", function (e) {
+    console.log(e);
+    const target = e.target;
+    if (target.matches("#view-button")) {
+      viewModal();
+      console.log("viewbutton is clicked");
+    }
   });
 };
 
 var renderModal = function (listing) {
-  console.log(listing);
-  var modalEL = $("<div>").addClass("modal").html(`
-  
-   <div class="modal ">
+  var modalEL = $("#img-modal").addClass("modal").html(`
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button  id="closeBtn" class="delete" aria-label="close"></button>
+      <p class="modal-card-title">Check out these shots!</p>
+      <button  id="close-button" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <img src="${listing.media[0].url}" alt="">
+      <img src="">
     </section>
     <footer class="modal-card-foot">
     </footer>
   </div>
-</div>
-    `);
+  </div> `);
 
   //event del to save button
   $("#img-modal").append(modalEL);
 
-  $(".view-button").on("click", function () {
-    modal.classList.add("is-active");
-    //save to local storage go here
+  modalEL.on("click", function (e) {
+    console.log(e);
+    const target = e.target;
+    if (target.matches("#close-button")) {
+      closeModal();
+      console.log("close button is clicked");
+    }
   });
+};
+
+let viewModal = function () {
+  renderModal();
+  $("#img-modal").addClass("is-active");
+};
+
+let closeModal = function () {
+  $("#img-modal").removeClass("is-active");
 };
