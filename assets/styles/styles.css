@@ -50,3 +50,18 @@ nav {
   background-size: cover;
   padding-bottom: 300px;
 }
+.display-image {
+  /* height: 300px; */
+  width: 300px;
+}
+
+#listings-results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.is-parent {
+  flex: 33.33%;
+}
