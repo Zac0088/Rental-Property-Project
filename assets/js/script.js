@@ -69,10 +69,8 @@ var renderListing = function (listing) {
                 <li>${listing.priceDetails.displayPrice}</li>
                 <li>${listing.advertiser.name}</li>
             </ul>
-             <img class="display-image is-justify-content-end is-flex" src="${listing.media[0].url}" alt="">
             <footer>
-                <button class="button">view</button>
-                <button id="saveListing1" class="button saveBtn">save</button>
+                <button class="view-button button">view</button>
             </footer>
             </div>
         </div>
@@ -89,36 +87,31 @@ var renderListing = function (listing) {
   });
 };
 
-var viewModal = document.querySelector(".view");
-var modal = document.querySelector(".modal");
-var closeModal = document.querySelector("#closeBtn");
-var saveBtn = document.querySelector(".saveBtn");
+var renderModal = function (listing) {
+  console.log(listing);
+  var modalEL = $("<div>").addClass("modal").html(`
+  
+   <div class="modal ">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button  id="closeBtn" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <img src="${listing.media[0].url}" alt="">
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+    `);
 
-// viewModal.addEventListener("click", () => {
-//   modal.classList.add("is-active");
-// });
+  //event del to save button
+  $("#img-modal").append(modalEL);
 
-closeModal.addEventListener("click", function () {
-  modal.classList.remove("is-active");
-});
-
-$("#viewListing1").on("click", function () {
-  modal.classList.add("is-active");
-});
-$("#viewListing2").on("click", function () {
-  modal.classList.add("is-active");
-});
-$("#viewListing3").on("click", function () {
-  modal.classList.add("is-active");
-});
-$("#viewListing4").on("click", function () {
-  modal.classList.add("is-active");
-});
-
-$("#viewListing5").on("click", function () {
-  modal.classList.add("is-active");
-});
-
-$("#viewListing6").on("click", function () {
-  modal.classList.add("is-active");
-});
+  $(".view-button").on("click", function () {
+    modal.classList.add("is-active");
+    //save to local storage go here
+  });
+};
