@@ -54,7 +54,6 @@ if (postcode) {
 }
 
 var renderListing = function (listing) {
-  console.log(listing);
   var listingEl = $("<div>").addClass("tile is-parent").html(`
   
         <div class="tile is-child box">
@@ -77,7 +76,6 @@ var renderListing = function (listing) {
             </div>
         </div>
     `);
-
   console.log(listingEl);
 
   //event del to save button
@@ -94,6 +92,7 @@ var renderListing = function (listing) {
 };
 
 var renderModal = function (listing) {
+  console.log(listing);
   var modalEL = $("#img-modal").addClass("modal").html(`
 
   <div class="modal-background"></div>
@@ -103,7 +102,7 @@ var renderModal = function (listing) {
       <button  id="close-button" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <img src="${listing.media[0].url}">
+      <img src="${listing.media[1].url}">
     </section>
     <footer class="modal-card-foot">
     </footer>
