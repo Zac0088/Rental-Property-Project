@@ -9,7 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <script src="/assets/js/script.js"></script>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places'></script>
     <link rel="stylesheet" href="/assets/style/style.css">
+    
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -60,12 +63,13 @@
     <p class="is-size-5" >"forever" landlord</p>
 </div>
 
-  <div class="field searchBox">
+<div class="field searchBox">
   <div class="control">
-    <input class="input" type="text" placeholder="Sydney,Manly">
-  </div>
+    <input id="searchTextField" type="text" size="50">
+<input id="address" name="address" value='' type="hidden" placeholder="Search Here">
 </div>
 </div>
+
 
 
 
@@ -248,6 +252,7 @@
       integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
       crossorigin="anonymous"
     ></script>
-<script src="/assets/js/script.js"></script>
+    
+    
   </body>
 </html>
