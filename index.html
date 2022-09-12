@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <script defer
     src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places&callback=initAutocomplete'></script>
-  <link rel="stylesheet" href="/assets/styles/styles.css">
+  <link rel="stylesheet" href="./assets/styles/styles.css">
 
 </head>
 
@@ -18,7 +18,7 @@
   <nav class="navbar " role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/index.html">
-        <img src="/house-solid.svg" width="112" height="28" />
+        <img src="./Images/house-solid.svg" width="112" height="28" />
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -28,9 +28,9 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item " href="/index.html"> Home </a>
-        <a class="navbar-item" href="/Pages/favourites.html"> My Favourites  </a>
-          <a class="navbar-item" href="/Pages/listings.html"> Search </a>
+        <a class="navbar-item " href="./index.html"> Home </a>
+        <a class="navbar-item" href="./Pages/favourites.html"> My Favourites  </a>
+          <a class="navbar-item" href="./Pages/listings.html"> Search </a>
       </div>
     </div>
 
@@ -49,7 +49,8 @@
   <div class="field">
   <label class="label">Search</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Sydney,Manly">
+    <input id="autocomplete" class="input" placeholder="Search Here" type="text"/>
+
 
   </div>
 </div>
@@ -80,6 +81,6 @@
       integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
       crossorigin="anonymous"
     ></script>
-<script src="/assets/js/script.js"></script>
+<script src="./assets/js/script.js"></script>
   </body>
 </html>
