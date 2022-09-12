@@ -89,7 +89,8 @@ var renderListing = function (listing) {
       console.log("viewbutton is clicked");
     }
     else if (target.matches("#save-button")) {
-      // Storage function to be integrated within the main html
+      // Storage function to be integrated within the favourites html from the listings html
+      $ (".addFavourites" ).on("click", function () {
       try {
         $(this).attr('disabled', true);
         var propIdAdd = $(this).closest("p").attr("id");
@@ -98,12 +99,37 @@ var renderListing = function (listing) {
         if(myFavouriteProp == null) {
           myFavouriteProp = [];
         }
+
         if(myFavouriteProp != null) {
-          for (var j = 0 < myFavouritesProp.length; j++) {
-            if (propIdAdd ==myFavouriteProp [j])
+          for (var j = 0 < myFavouritesProp.length; i++) {
+            if (propIdAdd == myFavouriteProp [i]) {
+              alert("This property is already in your favourites")
+              myFavouritesProp =[];
+            }
           };
         }
+      myFavouritesProp.push(propIdAdd);
+      localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
+      }
+    });
 
+    //function to remove from favourites - this needs to be added to the favourites page
+    $(function () {
+      $ (".removeFavourites" ).on("click", function () {
+        try {
+          $(this).attr('disabled', true);
+          var propIdAdd = $(this).closest("p").attr("id");
+            myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
+
+  
+          if(myFavouriteProp != null) {
+            for (var j = 0 < myFavouritesProp.length; i++) {
+              if (propIdAdd == myFavouriteProp [i]) {
+                alert("This property is already in your favourites")
+                myFavouritesProp =[];
+              }
+            };
+          }
     }
   });
 };
