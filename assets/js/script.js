@@ -141,9 +141,20 @@ var renderListing = function (listing) {
   
   };
 
-  // view saved favourites within saved listing page
+  // view saved favourites within saved listing page from local storage
  console.log ("Restoring array data from local storage");
  myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
+ var output = "<ul>";
+ if (myFavouriteProp ! = null) {
+  for var i = 0; i< data.properties.length; i++) {
+    for (i = 0; i< myFavouriteProp.length; i++)
+      if (data.properties[i].id == myFavouriteProp[i]) {
+        output+=data.properties[i] + " " 
+        // Need to complete this function using the same query as per listings page, i.e. images etc
+        
+      }
+  }
+ }
 
 
 let renderImg = function (listing) {
