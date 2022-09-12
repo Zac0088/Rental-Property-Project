@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renters</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places'></script>
-  <link rel="stylesheet" href="/assets/style/style.css">
-  
+  <script defer
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places&callback=initAutocomplete'></script>
+  <link rel="stylesheet" href="/assets/styles/styles.css">
+
 </head>
 
 <body>
@@ -44,13 +45,18 @@
     <div class="columns is-mobile is-centered is-primary  is-flex is-vcentered">
       <div class="column box is-half is-primary p-6 m-6 is-vcentered has-background-light ">
 
-        <div class="field">
+
+        <input id="autocomplete" placeholder="Search Here" type="text" size="50"/>
+        <!-- <div class="field">
           <label class="label">Search</label>
           <div class="control">
-            <input class="input searchTextField" type="text" size="50">
-            <input class ="address" name="address" value="" type="hidden" placeholder="Search Here">
+            <input id="searchTextField" type="text" size="50">
+
+            <input id="address" name="address" value="" type="hidden" placeholder="Search Here">
           </div>
-        </div>
+        </div> -->
+
+
         <div class="field">
           <div class="control">
             <label class="checkbox">
@@ -78,7 +84,7 @@
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
     integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
   <script src="./assets/js/script.js"></script>
-  
+
 
 </body>
 
