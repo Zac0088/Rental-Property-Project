@@ -88,6 +88,23 @@ var renderListing = function (listing) {
       viewModal();
       console.log("viewbutton is clicked");
     }
+    else if (target.matches("#save-button")) {
+      // Storage function to be integrated within the main html
+      try {
+        $(this).attr('disabled', true);
+        var propIdAdd = $(this).closest("p").attr("id");
+        var myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
+
+        if(myFavouriteProp == null) {
+          myFavouriteProp = [];
+        }
+        if(myFavouriteProp != null) {
+          for (var j = 0 < myFavouritesProp.length; j++) {
+            if (propIdAdd ==myFavouriteProp [j])
+          };
+        }
+
+    }
   });
 };
 
