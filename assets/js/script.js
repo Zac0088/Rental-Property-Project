@@ -123,12 +123,17 @@ var renderListing = function (listing) {
 
   
           if(myFavouriteProp != null) {
-            for (var j = 0 < myFavouritesProp.length; i++) {
-              if (propIdAdd == myFavouriteProp [i]) {
-                alert("This property is already in your favourites")
-                myFavouritesProp =[];
+            for (var i = 0 < myFavouritesProp.length; i++) {
+              if (propIdRemove== myFavouriteProp [i]) {
+                alert("This property is removed")
+                 delete myFavouritesProp = [i];
+                 localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
+                 myFavouriteProp[i] = [];
               }
             };
+          }
+          if(myFavouriteProp == null) {
+            alert ("You have no favourite items");
           }
     }
   });
