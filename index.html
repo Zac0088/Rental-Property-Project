@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renters</title>
+  <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <script defer
     src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places&callback=initAutocomplete'></script>
@@ -28,8 +29,8 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item " href="/index.html"> Home </a>
-        <a class="navbar-item " href="/favourites.html"> My Listings </a>
-        <a class="navbar-item " href="/listings.html"> Search </a>
+        <a class="navbar-item" href="/Pages/favourites.html"> My Favourites  </a>
+          <a class="navbar-item" href="/Pages/listings.html"> Search </a>
       </div>
     </div>
 
@@ -42,43 +43,43 @@
       <p class="is-size-5">Always walking around like they rent the place.</p>
     </div>
 
-    <div class="columns is-mobile is-centered is-primary  is-flex is-vcentered">
-      <div class="column box is-half is-primary p-6 m-6 is-vcentered has-background-light ">
+<div class="columns is-mobile is-centered is-primary  is-flex is-vcentered">
+  <div class="column box is-half is-primary p-6 m-6 is-vcentered has-background-light ">
 
+  <div class="field">
+  <label class="label">Search</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Sydney,Manly">
 
-        <input id="autocomplete" placeholder="Search Here" type="text" size="50"/>
-        
+  </div>
+</div>
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox">
+      I agree to the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">terms and conditions</a>
+      
+    </label>
+  </div>
+</div>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</main>
+<script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
 
-
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input type="checkbox">
-              I agree to the <a href="#">terms and conditions</a>
-            </label>
-          </div>
-        </div>
-
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-link submitBtn">Submit</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-    </div>
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-
-
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+      crossorigin="anonymous"
+    ></script>
+<script src="/assets/js/script.js"></script>
+  </body>
 </html>
