@@ -9,9 +9,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <script src="/assets/js/script.js"></script>
-    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places'></script>
-    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+
+    
+    <script defer
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrYaBRTTfxYHK1z2ea3VzaBLPYUcwfkVw&libraries=places&callback=initAutocomplete'></script>
     
   </head>
   <body>
@@ -63,12 +65,7 @@
     <p class="is-size-5" >"forever" landlord</p>
 </div>
 
-<div class="field searchBox">
-  <div class="control">
-    <input id="searchTextField" type="text" size="50">
-<input id="address" name="address" value='' type="hidden" placeholder="Search Here">
-</div>
-</div>
+<input id="autocomplete" placeholder="Search Here" type="text" size="50"/>
 
 
 
@@ -252,7 +249,7 @@
       integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
       crossorigin="anonymous"
     ></script>
-    
+    <script src="../assets/js/script.js"></script>
     
   </body>
 </html>
