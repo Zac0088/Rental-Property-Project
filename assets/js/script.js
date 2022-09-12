@@ -41,7 +41,6 @@ var getListing = function (postcode) {
       for (var i = 0; i < data.length; i++) {
         var result = data[i];
         renderListing(result.listing);
-        renderImg(result.listing);
       }
     });
 };
@@ -55,28 +54,27 @@ if (postcode) {
 
 var renderListing = function (listing) {
   var listingEl = $("<div>").addClass("tile is-parent").html(`
-
-        <div class="tile is-child box">
-            <p class="title">${listing.propertyDetails.allPropertyTypes}</p>
-            <div class="subtitle">
-            <ul>
-                <li>${listing.propertyDetails.displayableAddress}</li>
-                <li>${listing.headline}</li>
-            </ul>
-            </div>
-            <div class="content">
-            <ul>
-                <li>${listing.priceDetails.displayPrice}</li>
-                <li>${listing.advertiser.name}</li>
-                <img src=${listing.media[0].url}/>
-            </ul>
-            <footer>
-                <button id="view-button" class="button">view</button>
-                <button id="save-button" class="button">save</button>
-            </footer>
-            </div>
+    <div class="tile is-child box">
+        <p class="title">${listing.propertyDetails.allPropertyTypes}</p>
+        <div class="subtitle">
+        <ul>
+            <li>${listing.propertyDetails.displayableAddress}</li>
+            <li>${listing.headline}</li>
+        </ul>
         </div>
-         `);
+        <div class="content">
+        <ul>
+            <li>${listing.priceDetails.displayPrice}</li>
+            <li>${listing.advertiser.name}</li>
+            <img src=${listing.media[0].url}/>
+        </ul>
+        <footer>
+            <button id="view-button" class="button">view</button>
+            <button id="save-button" class="button">save</button>
+        </footer>
+        </div>
+    </div>
+  `);
 
   //event del to save button
   $("#listings-results").append(listingEl);
@@ -86,6 +84,7 @@ var renderListing = function (listing) {
     console.log(e);
     const target = e.target;
     if (target.matches("#view-button")) {
+      renderImg(listing);
       viewModal();
       console.log("viewbutton is clicked");
     }
@@ -104,6 +103,10 @@ let renderImg = function (listing) {
     </header>
     <section class="modal-card-body">
       <img src=${listing.media[0].url}/>
+      <img src=${listing.media[1].url}/>
+      <img src=${listing.media[2].url}/>
+      <img src=${listing.media[3].url}/>
+      <img src=${listing.media[4].url}/>
     </section>
     <footer class="modal-card-foot">
     </footer>
@@ -139,29 +142,4 @@ $(document).ready(function () {
     $(".navbar-burger").toggleClass("is-active");
     $(".navbar-menu").toggleClass("is-active");
   });
-});
-
-// Initialize all div with carousel class
-var carousels = bulmaCarousel.attach(".carousel", options);
-
-// Loop on each carousel initialized
-for (var i = 0; i < carousels.length; i++) {
-  // Add listener to  event
-  carousels[i].on("before:show", (state) => {
-    console.log(state);
-  });
-}
-
-// Access to bulmaCarousel instance of an element
-var element = document.querySelector("#my-element");
-if (element && element.bulmaCarousel) {
-  // bulmaCarousel instance is available as element.bulmaCarousel
-  element.bulmaCarousel.on("before-show", function (state) {
-    console.log(state);
-  });
-}
-
-bulmaCarousel.attach("#carousel-demo", {
-  slidesToScroll: 1,
-  slidesToShow: 4,
 });
