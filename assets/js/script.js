@@ -91,70 +91,70 @@ var renderListing = function (listing) {
     else if (target.matches("#save-button")) {
       // Storage function to be integrated within the favourites html from the listings html
       // $ (".addFavourites" ).on("click", function () {
-      try {
-        $(this).attr('disabled', true);
-        var propIdAdd = $(this).closest("p").attr("id");
-        var myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
 
-        if(myFavouriteProp == null) {
-          myFavouriteProp = [];
-        }
+      $(this).attr('disabled', true);
+      // var propIdAdd = $(this).closest("p").attr("id");
+      var myFavouritesProp = JSON.parse(localStorage.getItem("favProp"));
 
-        if(myFavouriteProp != null) {
-          for (var j = 0 < myFavouritesProp.length; i++) {
-            if (propIdAdd == myFavouriteProp [i]) {
-              alert("This property is already in your favourites")
-              myFavouritesProp =[];
-            }
-          };
-        }
-      myFavouritesProp.push(propIdAdd);
-      localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
+      if (myFavouritesProp == null) {
+        myFavouritesProp = [];
       }
-    
+
+      // if(myFavouriteProp != null) {
+      //   for (var i = 0 < myFavouritesProp.length; i++) {
+      //     if (propIdAdd == myFavouriteProp [i]) {
+      //       alert("This property is already in your favourites")
+      //       myFavouritesProp =[];
+      //     }
+      //   };
+    }
+    myFavouritesProp.push(listing);
+    localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
+
+
 
     //function to remove from favourites - this needs to be added to the favourites page
-    
-      // (".removeFavourites" ).on("click", function () {
-        try {
-          $(this).attr('disabled', true);
-          var propIdAdd = $(this).closest("p").attr("id");
-            myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
 
-  
-          if(myFavouriteProp != null) {
-            for (var i = 0 < myFavouritesProp.length; i++) {
-              if (propIdRemove== myFavouriteProp [i]) {
-                alert("This property is removed")
-                 delete myFavouritesProp = [i];
-                 localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
-                 myFavouriteProp[i] = [];
-              }
-            };
-          }
-          if(myFavouriteProp == null) {
-            alert ("You have no favourite items");
-          }
-        }
-      })  
-    })
-  
-  };
+    // (".removeFavourites" ).on("click", function () {
+    // try {
+    //   $(this).attr('disabled', true);
+    //   var propIdAdd = $(this).closest("p").attr("id");
+    //     myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
 
-  // view saved favourites within saved listing page from local storage
- console.log ("Restoring array data from local storage");
- myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
- var output = "<ul>";
- if (myFavouriteProp ! = null) {
-  for var i = 0; i< data.properties.length; i++) {
-    for (i = 0; i< myFavouriteProp.length; i++)
+
+    //   if(myFavouriteProp != null) {
+    //     for (var i = 0 < myFavouritesProp.length; i++) {
+    //       if (propIdRemove== myFavouriteProp [i]) {
+    //         alert("This property is removed")
+    //          delete myFavouritesProp [i];
+    //          localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
+    //          myFavouriteProp[i] = [];
+    //       }
+    //     };
+    //   }
+    //   if(myFavouriteProp == null) {
+    //     alert ("You have no favourite items");
+    //   }
+    // }
+    // })  
+  })
+
+};
+
+// view saved favourites within saved listing page from local storage
+console.log("Restoring array data from local storage");
+myFavouritesProp = JSON.parse(localStorage.getItem("favProp"));
+var output = "<ul>";
+if (myFavouriteProp! = null) {
+  for var i = 0; i < data.properties.length; i++) {
+    for (i = 0; i < myFavouriteProp.length; i++)
       if (data.properties[i].id == myFavouriteProp[i]) {
-        output+=data.properties[i] + " " 
-        // Need to complete this function using the same query as per listings page, i.e. images etc
-        
+        output += data.properties[i] + " "
+        // Need to complete this function using the same query as per listings page, i.e. Call render listing from local storage
+
       }
   }
- }
+}
 
 
 let renderImg = function (listing) {
