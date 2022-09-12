@@ -90,7 +90,7 @@ var renderListing = function (listing) {
     }
     else if (target.matches("#save-button")) {
       // Storage function to be integrated within the favourites html from the listings html
-      $ (".addFavourites" ).on("click", function () {
+      // $ (".addFavourites" ).on("click", function () {
       try {
         $(this).attr('disabled', true);
         var propIdAdd = $(this).closest("p").attr("id");
@@ -111,11 +111,11 @@ var renderListing = function (listing) {
       myFavouritesProp.push(propIdAdd);
       localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
       }
-    });
+    
 
     //function to remove from favourites - this needs to be added to the favourites page
-    $(function () {
-      $ (".removeFavourites" ).on("click", function () {
+    
+      // (".removeFavourites" ).on("click", function () {
         try {
           $(this).attr('disabled', true);
           var propIdAdd = $(this).closest("p").attr("id");
@@ -135,9 +135,16 @@ var renderListing = function (listing) {
           if(myFavouriteProp == null) {
             alert ("You have no favourite items");
           }
-    }
-  });
-};
+        }
+      })  
+    })
+  
+  };
+
+  // view saved favourites within saved listing page
+ console.log ("Restoring array data from local storage");
+ myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
+
 
 let renderImg = function (listing) {
   console.log(listing);
