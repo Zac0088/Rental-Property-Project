@@ -65,3 +65,9 @@ nav {
 .is-parent {
   flex: 33.33%;
 }
+
+@media screen and (max-width: 992px) {
+  #listings-results {
+    display: grid;
+  }
+}

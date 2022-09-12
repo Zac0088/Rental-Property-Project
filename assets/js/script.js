@@ -41,7 +41,7 @@ var getListing = function (postcode) {
       for (var i = 0; i < data.length; i++) {
         var result = data[i];
         renderListing(result.listing);
-        renderModal(result.listing);
+        renderImg(result.listing);
       }
     });
 };
@@ -55,7 +55,7 @@ if (postcode) {
 
 var renderListing = function (listing) {
   var listingEl = $("<div>").addClass("tile is-parent").html(`
-  
+
         <div class="tile is-child box">
             <p class="title">${listing.propertyDetails.allPropertyTypes}</p>
             <div class="subtitle">
@@ -68,6 +68,7 @@ var renderListing = function (listing) {
             <ul>
                 <li>${listing.priceDetails.displayPrice}</li>
                 <li>${listing.advertiser.name}</li>
+                <img src=${listing.media[0].url}/>
             </ul>
             <footer>
                 <button id="view-button" class="button">view</button>
@@ -75,13 +76,13 @@ var renderListing = function (listing) {
             </footer>
             </div>
         </div>
-    `);
-  console.log(listingEl);
+         `);
 
   //event del to save button
   $("#listings-results").append(listingEl);
 
   listingEl.on("click", function (e) {
+    e.preventDefault();
     console.log(e);
     const target = e.target;
     if (target.matches("#view-button")) {
@@ -91,7 +92,7 @@ var renderListing = function (listing) {
   });
 };
 
-var renderModal = function (listing) {
+let renderImg = function (listing) {
   console.log(listing);
   var modalEL = $("#img-modal").addClass("modal").html(`
 
@@ -102,12 +103,13 @@ var renderModal = function (listing) {
       <button  id="close-button" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <img src="${listing.media[1].url}">
+      <img src=${listing.media[0].url}/>
     </section>
     <footer class="modal-card-foot">
     </footer>
   </div>
-  </div> `);
+  </div> 
+  `);
 
   //event del to save button
   $("#img-modal").append(modalEL);
@@ -123,10 +125,43 @@ var renderModal = function (listing) {
 };
 
 let viewModal = function () {
-  renderModal();
   $("#img-modal").addClass("is-active");
 };
 
 let closeModal = function () {
   $("#img-modal").removeClass("is-active");
 };
+
+$(document).ready(function () {
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function () {
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+});
+
+// Initialize all div with carousel class
+var carousels = bulmaCarousel.attach(".carousel", options);
+
+// Loop on each carousel initialized
+for (var i = 0; i < carousels.length; i++) {
+  // Add listener to  event
+  carousels[i].on("before:show", (state) => {
+    console.log(state);
+  });
+}
+
+// Access to bulmaCarousel instance of an element
+var element = document.querySelector("#my-element");
+if (element && element.bulmaCarousel) {
+  // bulmaCarousel instance is available as element.bulmaCarousel
+  element.bulmaCarousel.on("before-show", function (state) {
+    console.log(state);
+  });
+}
+
+bulmaCarousel.attach("#carousel-demo", {
+  slidesToScroll: 1,
+  slidesToShow: 4,
+});
