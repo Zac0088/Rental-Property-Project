@@ -1,23 +1,36 @@
 
 let autocomplete;
+
 function initAutocomplete() {
-  autocomplete= new google.maps.places.Autocomplete(
+  autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('autocomplete'),
     {
-      componentRestrictions: {'country' : ['AU']},
-      fields: ['place_id', 'geometry', 'name']
+      componentRestrictions: { 'country': ['AU'] },
+      fields: ['place_id', 'geometry', 'name', 'address_components']
     });
-  autocomplete.addEventListener('on_submit', onPlaceChanged);
+  autocomplete.addListener('place_changed', onPlaceChanged);
 }
-function onSubmit() {
-var place = autocomplete.getPlace();
-if (!place.geometry){
-  document.getElementById('autocomplete').placeholder =
-  'Search Here';
-}else{
-  document.getElementById('details').innerHTML = place.name;
+
+window.initAutocomplete = initAutocomplete;
+
+function onPlaceChanged() {
+  var place = autocomplete.getPlace();
+  var postcode = getPostcode(place);
+  document.location.assign("./Pages/listings.html?postcode=" + postcode)
 }
+
+function getPostcode(place) {
+  let postcode = "";
+  for (const component of place.address_components) {
+    const componentType = component.types[0];
+    if (componentType == "postal_code") {
+      postcode = component.short_name
+    }
+  }
+  return postcode
 }
+
+
 
 
 
@@ -69,13 +82,6 @@ var getListing = function (postcode) {
       }
     });
 };
-
-var searchParams = new URL(document.location).searchParams;
-var postcode = searchParams.get("postcode");
-console.log(postcode);
-if (postcode) {
-  getListing(postcode);
-}
 
 var renderListing = function (listing) {
   var listingEl = $("<div>").addClass("tile is-parent").html(`
@@ -160,7 +166,17 @@ let closeModal = function () {
   $("#img-modal").removeClass("is-active");
 };
 
+var initialize = function () {
+  var searchParams = new URL(document.location).searchParams;
+  var postcode = searchParams.get("postcode");
+  console.log(postcode);
+  if (postcode) {
+    getListing(postcode);
+  }
+}
+
 $(document).ready(function () {
+  initialize();
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(function () {
     // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
