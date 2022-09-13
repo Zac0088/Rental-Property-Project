@@ -45,13 +45,6 @@ var getListing = function (postcode) {
     });
 };
 
-var searchParams = new URL(document.location).searchParams;
-var postcode = searchParams.get("postcode");
-console.log(postcode);
-if (postcode) {
-  getListing(postcode);
-}
-
 var renderListing = function (listing) {
   var listingEl = $("<div>").addClass("tile is-parent").html(`
     <div class="tile is-child box">
@@ -137,7 +130,17 @@ let closeModal = function () {
   $("#img-modal").removeClass("is-active");
 };
 
+var initialize = function () {
+  var searchParams = new URL(document.location).searchParams;
+  var postcode = searchParams.get("postcode");
+  console.log(postcode);
+  if (postcode) {
+    getListing(postcode);
+  }
+}
+
 $(document).ready(function () {
+  initialize();
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(function () {
     // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -145,3 +148,10 @@ $(document).ready(function () {
     $(".navbar-menu").toggleClass("is-active");
   });
 });
+
+
+function navigateToListing(postcode) {
+  document.location.assign("./listings.html?postcode=" + postcode)
+}
+
+window.navigateToListing = navigateToListing;
