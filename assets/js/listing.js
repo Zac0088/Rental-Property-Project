@@ -1,41 +1,3 @@
-
-let autocomplete;
-
-function initAutocomplete() {
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'),
-    {
-      componentRestrictions: { 'country': ['AU'] },
-      fields: ['place_id', 'geometry', 'name', 'address_components']
-    });
-  autocomplete.addListener('place_changed', onPlaceChanged);
-}
-
-window.initAutocomplete = initAutocomplete;
-
-function onPlaceChanged() {
-  var place = autocomplete.getPlace();
-  var postcode = getPostcode(place);
-  document.location.assign("./Pages/listings.html?postcode=" + postcode)
-}
-
-function getPostcode(place) {
-  let postcode = "";
-  for (const component of place.address_components) {
-    const componentType = component.types[0];
-    if (componentType == "postal_code") {
-      postcode = component.short_name
-    }
-  }
-  return postcode
-}
-
-
-
-
-
-
-
 // Get properties from Domain API
 var getListing = function (postcode) {
   var apiUrl =
@@ -184,3 +146,10 @@ $(document).ready(function () {
     $(".navbar-menu").toggleClass("is-active");
   });
 });
+
+
+function navigateToListing(postcode) {
+  document.location.assign("./listings.html?postcode=" + postcode)
+}
+
+window.navigateToListing = navigateToListing;
