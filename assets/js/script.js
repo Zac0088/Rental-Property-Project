@@ -224,24 +224,36 @@ var renderFavourite = function (favouriteListing) {
       viewModal();
       console.log("viewbutton is clicked");
     }
-  }); 
+    else if (target.matches("#remove-button")) {
+      removeFromFavourites(favouriteListing.id);
+      listingEl.remove();
+      // 5. delete the element off the page - to do so, you need to query select the container and use the .remove() method to remove it from DOM
+    }
+  });
 }
 
 //Remove a listing from favourites
-var removeFavourites = function () {
-  var myFavourites = JSON.parse(localStorage.getItem("favProp"));
+var removeFromFavourites = function (listingIdToBeDeleted) {
+
+  // 1. load the existing favs (existingFavs)
+  var existingFavs= JSON.parse(localStorage.getItem("favProp"));
+  // 2. create a newFavs array and initialize to an empty array []
+  if (newFavs == null) {
+    newFavs = []
+  }
+  // 3. loop through existingFavs and if the fav.id does not match listingIdToBeDeleted -> then push the fav into the newFavs array
+  for (let i = 0; i < newFavs; i++) {
+    const newFavs = listingIdToBeDeleted[i];
+    renderFavourite(newFavs)
+  }
+  // 4. at the end json parse the newFavs and set to local storage
+  locateStorage.clear("");
+
   console.log("delete");
 
-  // if(myFavouriteProp != null) {
-  //   for (var i = 0; i < myFavourites.length; i++) {
-  //     if (propIdRemove== myFavouriteProp [i]) {
-  //       delete myFavouriteProp = [i];
-  //       localStorage.setItem(“remove”, JSON.stringify(myFavouritesProp));
-  //       myFavouriteProp[i] = [];
-  //     }
-  //   }
-  // };
 }
+
+// var
 
 //Clear all favourites - add a main button
 // clearEl.addEventListener("click", function () {
