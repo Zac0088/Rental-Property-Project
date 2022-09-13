@@ -37,6 +37,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1089%26quot%3b)' fill='none'%3e%3cpath d='M -702.0372766742543%2c456 C -606.04%2c415.2 -414.04%2c246.4 -222.0372766742543%2c252 C -30.04%2c257.6 65.96%2c491.6 257.96272332574574%2c484 C 449.96%2c476.4 545.96%2c236.6 737.9627233257457%2c214 C 929.96%2c191.4 1077.56%2c369.8 1217.9627233257456%2c371 C 1358.37%2c372.2 1395.59%2c250.2 1440%2c220' stroke='rgba(255%2c 56%2c 96%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1089'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  padding-bottom: 100px;
 }
 .favouritesBackground {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1155%26quot%3b)' fill='none'%3e%3cpath d='M -463.11916332779174%2c429 C -367.12%2c366 -175.12%2c104.6 16.880836672208268%2c114 C 208.88%2c123.4 304.88%2c456.2 496.88083667220826%2c476 C 688.88%2c495.8 784.88%2c225 976.8808366722083%2c213 C 1168.88%2c201 1364.26%2c413 1456.8808366722083%2c416 C 1549.5%2c419 1443.38%2c265.6 1440%2c228' stroke='rgba(0%2c 209%2c 178%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1155'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
@@ -60,10 +61,15 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 40px;
 }
 
 .is-parent {
   flex: 33.33%;
+}
+
+.listing-page-submit {
+  width: 290.36px;
 }
 
 @media screen and (max-width: 992px) {
