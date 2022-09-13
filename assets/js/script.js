@@ -140,7 +140,7 @@ var renderListing = function (listing) {
 
 };
 
-// view saved favourites within saved listing page from local storage
+// view saved favourites within "My favourites" from local storage
 console.log("Restoring array data from local storage");
 myFavouritesProp = JSON.parse(localStorage.getItem("favProp"));
 var output = "<ul>";
