@@ -226,21 +226,24 @@ var renderFavourite = function (favouriteListing) {
 }
 
 //Remove a listing from favourites
-      // (“.removeFavourites” ).on(“click”, function () {
-        try {
-          $(this).attr(‘disabled’, true);
-          var propIdAdd = $(this).closest(“p”).attr(“id”);
-            myFavouritesProp=JSON.parse(localStorage.getItem(“favProp”));
-          if(myFavouriteProp != null) {
-            for (var i = 0 < myFavouritesProp.length; i++) {
-              if (propIdRemove== myFavouriteProp [i]) {
-                alert(“This property is removed”)
-                 delete myFavouritesProp = [i];
-                 localStorage.setItem(“favProp”, JSON.stringify(myFavouritesProp));
-                 myFavouriteProp[i] = [];
-              }
-            };
-          }
+var removeFavourites = function () {
+  if(myFavouriteProp != null) {
+    for (var i = 0; i < myFavouritesProp.length; i++) {
+      if (propIdRemove== myFavouriteProp [i]) {
+        delete myFavouritesProp = [i];
+        localStorage.setItem(“remove”, JSON.stringify(myFavouritesProp));
+        myFavouriteProp[i] = [];
+      }
+    }
+  };
+}
 
+
+//Clear all favourites 
+clearEl.addEventListener("click", function () {
+  localStorage.clear();
+  searchHistory = [];
+  renderSearchHistory();
+})
 
 loadFavourites()
