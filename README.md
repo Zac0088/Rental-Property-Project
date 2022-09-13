@@ -15,9 +15,9 @@ SO THAT I can save the properties to my favorites to view later
 
 ## Deployed Webpage
 
-[Link to website:]
+Link to website:
 
-[Link to Github:] https://github.com/Zac0088/Rental-Property-Project.git
+Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 
 ## Acceptance criteria
 GIVEN the user is presented with a webpage and with functionality of the page 
