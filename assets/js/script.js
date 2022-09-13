@@ -177,7 +177,9 @@ var loadFavourites = function () {
   console.log("Restoring array data from local storage");
   var myFavourites = JSON.parse(localStorage.getItem("favProp"));
   console.log(myFavourites)
-
+  if (myFavourites === null) {
+    myFavourites = []
+  }
   for (let i = 0; i < myFavourites.length; i++) {
     const favouriteListing = myFavourites[i];
     renderFavourite(favouriteListing)
@@ -204,7 +206,7 @@ var renderFavourite = function (favouriteListing) {
       </ul>
       <footer>
           <button id="view-button" class="button">view</button>
-          <button id="save-button" class="button">save</button>
+          <button id="remove-button" class="button">remove</button>
       </footer>
       </div>
   </div>
@@ -227,23 +229,25 @@ var renderFavourite = function (favouriteListing) {
 
 //Remove a listing from favourites
 var removeFavourites = function () {
-  if(myFavouriteProp != null) {
-    for (var i = 0; i < myFavouritesProp.length; i++) {
-      if (propIdRemove== myFavouriteProp [i]) {
-        delete myFavouritesProp = [i];
-        localStorage.setItem(“remove”, JSON.stringify(myFavouritesProp));
-        myFavouriteProp[i] = [];
-      }
-    }
-  };
+  var myFavourites = JSON.parse(localStorage.getItem("favProp"));
+  console.log("delete");
+
+  // if(myFavouriteProp != null) {
+  //   for (var i = 0; i < myFavourites.length; i++) {
+  //     if (propIdRemove== myFavouriteProp [i]) {
+  //       delete myFavouriteProp = [i];
+  //       localStorage.setItem(“remove”, JSON.stringify(myFavouritesProp));
+  //       myFavouriteProp[i] = [];
+  //     }
+  //   }
+  // };
 }
 
-
-//Clear all favourites 
-clearEl.addEventListener("click", function () {
-  localStorage.clear();
-  searchHistory = [];
-  renderSearchHistory();
-})
+//Clear all favourites - add a main button
+// clearEl.addEventListener("click", function () {
+//   localStorage.clear();
+//   searchHistory = [];
+//   renderSearchHistory();
+// })
 
 loadFavourites()
