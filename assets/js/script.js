@@ -112,7 +112,6 @@ var renderListing = function (listing) {
     localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
 
 
-
     //function to remove from favourites - this needs to be added to the favourites page
 
     // (".removeFavourites" ).on("click", function () {
