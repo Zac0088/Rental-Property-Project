@@ -22,7 +22,8 @@ Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 ## Acceptance criteria
 GIVEN the user is presented with a webpage and with functionality of the page. 
 THEN the user is presented with a search function box.
-WHEN a search query it entered (location), the user presented with property listings in the suburb/ city (Australia)- with a decriprion of the property, images, pricing and realtor for the listing.
+WHEN a search query it entered (location), 
+THEN the user presented with property listings in the suburb/ city (Australia)- with a decriprion of the property, images, pricing and realtor for the listing.
 THEN the user selects a listing, a modal will pop up providing further details of the selected listing - more images, price, exact location and availability. 
 THEN the user can click on the map button, 
 SO THAT the user can have a view of the property. 
