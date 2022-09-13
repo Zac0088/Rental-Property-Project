@@ -61,10 +61,15 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 40px;
 }
 
 .is-parent {
   flex: 33.33%;
+}
+
+.listing-page-submit {
+  width: 290.36px;
 }
 
 @media screen and (max-width: 992px) {
