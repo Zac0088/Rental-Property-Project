@@ -89,70 +89,31 @@ var renderListing = function (listing) {
       console.log("viewbutton is clicked");
     }
     else if (target.matches("#save-button")) {
-      // Storage function to be integrated within the favourites html from the listings html
-      // $ (".addFavourites" ).on("click", function () {
-
-      $(this).attr('disabled', true);
-      // var propIdAdd = $(this).closest("p").attr("id");
-      var myFavouritesProp = JSON.parse(localStorage.getItem("favProp"));
-
-      if (myFavouritesProp == null) {
-        myFavouritesProp = [];
+      // The save button is disabled if the listing is already saved to favourites
+      $(target).attr('disabled', true);
+      var myFavourites = JSON.parse(localStorage.getItem("favProp"));
+      //If there are no favourite listings there will be an empty array
+      if (myFavourites == null) {
+        myFavourites = [];
       }
 
-      // if(myFavouriteProp != null) {
-      //   for (var i = 0 < myFavouritesProp.length; i++) {
-      //     if (propIdAdd == myFavouriteProp [i]) {
-      //       alert("This property is already in your favourites")
-      //       myFavouritesProp =[];
-      //     }
-      //   };
+      var isAlreadyFavourited = false;
+
+      for (var i = 0; i < myFavourites.length; i++) {
+        var favouriteListing = myFavourites[i];
+        if (favouriteListing.id === listing.id) {
+          isAlreadyFavourited = true;
+        }
+      };
+
+      if (!isAlreadyFavourited) {
+        myFavourites.push(listing);
+        localStorage.setItem("favProp", JSON.stringify(myFavourites));
+      } else {
+        console.log("Listing already in favourites", listing)
+      }
     }
-    myFavouritesProp.push(listing);
-    localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
-
-
-    //function to remove from favourites - this needs to be added to the favourites page
-
-    // (".removeFavourites" ).on("click", function () {
-    // try {
-    //   $(this).attr('disabled', true);
-    //   var propIdAdd = $(this).closest("p").attr("id");
-    //     myFavouritesProp=JSON.parse(localStorage.getItem("favProp"));
-
-
-    //   if(myFavouriteProp != null) {
-    //     for (var i = 0 < myFavouritesProp.length; i++) {
-    //       if (propIdRemove== myFavouriteProp [i]) {
-    //         alert("This property is removed")
-    //          delete myFavouritesProp [i];
-    //          localStorage.setItem("favProp", JSON.stringify(myFavouritesProp));
-    //          myFavouriteProp[i] = [];
-    //       }
-    //     };
-    //   }
-    //   if(myFavouriteProp == null) {
-    //     alert ("You have no favourite items");
-    //   }
-    // }
-    // })  
   })
-
-};
-
-// view saved favourites within "My favourites" from local storage
-console.log("Restoring array data from local storage");
-myFavouritesProp = JSON.parse(localStorage.getItem("favProp"));
-var output = "<ul>";
-if (myFavouriteProp! = null) {
-  for var i = 0; i < data.properties.length; i++) {
-    for (i = 0; i < myFavouriteProp.length; i++)
-      if (data.properties[i].id == myFavouriteProp[i]) {
-        output += data.properties[i] + " "
-        // Need to complete this function using the same query as per listings page, i.e. Call render listing from local storage
-
-      }
-  }
 }
 
 
@@ -208,3 +169,78 @@ $(document).ready(function () {
     $(".navbar-menu").toggleClass("is-active");
   });
 });
+
+
+// favourites.js
+// view saved favourites within "My favourites" from local storage
+var loadFavourites = function () {
+  console.log("Restoring array data from local storage");
+  var myFavourites = JSON.parse(localStorage.getItem("favProp"));
+  console.log(myFavourites)
+
+  for (let i = 0; i < myFavourites.length; i++) {
+    const favouriteListing = myFavourites[i];
+    renderFavourite(favouriteListing)
+  }
+}
+
+var renderFavourite = function (favouriteListing) {
+  console.log("Restoring array data from local storage");
+  console.log(favouriteListing)
+  var listingEl = $("<div>").addClass("tile is-parent").html(`
+  <div class="tile is-child box">
+      <p class="title">${favouriteListing.propertyDetails.allPropertyTypes}</p>
+      <div class="subtitle">
+      <ul>
+          <li>${favouriteListing.propertyDetails.displayableAddress}</li>
+          <li>${favouriteListing.headline}</li>
+      </ul>
+      </div>
+      <div class="content">
+      <ul>
+          <li>${favouriteListing.priceDetails.displayPrice}</li>
+          <li>${favouriteListing.advertiser.name}</li>
+          <img src=${favouriteListing.media[0].url}/>
+      </ul>
+      <footer>
+          <button id="view-button" class="button">view</button>
+          <button id="save-button" class="button">save</button>
+      </footer>
+      </div>
+  </div>
+  `);
+
+  //event del to save button
+  $("#fav-listings").append(listingEl);
+
+  listingEl.on("click", function (e) {
+    e.preventDefault();
+    console.log(e);
+    const target = e.target;
+    if (target.matches("#view-button")) {
+      renderImg(listing);
+      viewModal();
+      console.log("viewbutton is clicked");
+    }
+  }); 
+}
+
+//Remove a listing from favourites
+      // (“.removeFavourites” ).on(“click”, function () {
+        try {
+          $(this).attr(‘disabled’, true);
+          var propIdAdd = $(this).closest(“p”).attr(“id”);
+            myFavouritesProp=JSON.parse(localStorage.getItem(“favProp”));
+          if(myFavouriteProp != null) {
+            for (var i = 0 < myFavouritesProp.length; i++) {
+              if (propIdRemove== myFavouriteProp [i]) {
+                alert(“This property is removed”)
+                 delete myFavouritesProp = [i];
+                 localStorage.setItem(“favProp”, JSON.stringify(myFavouritesProp));
+                 myFavouriteProp[i] = [];
+              }
+            };
+          }
+
+
+loadFavourites()
