@@ -35,12 +35,12 @@ THEN the user will be presented with the listings they have selected "Add to fav
 
 ## Development Technologies used 
 
-CSS Framework - Bulma
-Use of modals
-Two Server side APIs - (1) Domain and (2) Google
-Interactive - respond to user input - search, save and query function
-Responsive - update search
-Use client-side storage to store persistent data - save function
+ - CSS Framework - Bulma
+ - Use of modals
+ - Two Server side APIs - (1) Domain and (2) Google
+ - Interactive - respond to user input - search, save and query function
+ - Responsive - update search
+ - Use client-side storage to store persistent data - save function
 
 
 
