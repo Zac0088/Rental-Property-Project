@@ -63,11 +63,12 @@ var renderListing = function (listing) {
         </ul>
         </div>
         <div class="content">
-    <img src=${listing.media[0].url}/>
+    <img  class="listingImg" src=${listing.media[0].url}/>
     </div>
         <ul>
             <li>Price - ${listing.priceDetails.displayPrice}</li>
             <li>Realtor - ${listing.advertiser.name}</li>
+            <br>
         </ul>
         <footer>
             <button id="view-button" class="button">view</button>
@@ -103,11 +104,11 @@ let renderImg = function (listing) {
       <button  id="close-button" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <img class="listingImg" src=${listing.media[0].url}/>
-      <img class="listingImg" src=${listing.media[1].url}/>
-      <img class="listingImg" src=${listing.media[2].url}/>
-      <img class="listingImg" src=${listing.media[3].url}/>
-      <img class="listingImg" src=${listing.media[4].url}/>
+      <img  src=${listing.media[0].url}/>
+      <img  src=${listing.media[1].url}/>
+      <img  src=${listing.media[2].url}/>
+      <img  src=${listing.media[3].url}/>
+      <img  src=${listing.media[4].url}/>
     </section>
     <footer class="modal-card-foot">
     </footer>
