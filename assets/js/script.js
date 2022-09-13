@@ -105,7 +105,7 @@ var renderListing = function (listing) {
       //     if (propIdAdd == myFavouriteProp [i]) {
       //       alert("This property is already in your favourites")
       //       myFavouritesProp =[];
-      //     }
+      //     } 
       //   };
     }
     myFavouritesProp.push(listing);
