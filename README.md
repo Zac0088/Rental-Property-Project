@@ -5,7 +5,7 @@
 
 A rental property search application is created to allow the user to search for rental property listings in any suburb/city (Australia). The user is able to view the listings in the selected suburb/city and is able to select to save a listing and modify these from the favorites storage. Furthermore, the user is also able to submit a query for the listing.   
 
-This app runs in the browser and features dynamically updated HTML, JavaScript, Bulma, CSS, Server-side APIs - Domain and Google. It is a clean and polished, responsive user interface that adapts to multiple screen sizes and responds to user interface that adapts to multiple screen sizes and responds to user interface. 
+This app runs in the browser and features dynamically updated HTML, JavaScript, Bulma, CSS, JQuery,Server-side APIs - Domain and Google. It is a clean and polished, responsive user interface that adapts to multiple screen sizes and responds to user interface that adapts to multiple screen sizes and responds to user interface. 
 
 ## User Story
 As a renter I want to be able to search for rental properties in any suburb/city (Australia)

@@ -234,9 +234,11 @@ var renderFavourite = function (favouriteListing) {
 
 //Remove a listing from favourites
 var removeFromFavourites = function (listingIdToBeDeleted) {
-
   // 1. load the existing favs (existingFavs)
-  var existingFavs= JSON.parse(localStorage.getItem("favProp"));
+  var listingIdToBeDeleted = function () {
+    console.log("Restoring array data from local storage");
+    var Favs = JSON.parse(localStorage.getItem("favProp"));
+  }
   // 2. create a newFavs array and initialize to an empty array []
   if (newFavs == null) {
     newFavs = []
