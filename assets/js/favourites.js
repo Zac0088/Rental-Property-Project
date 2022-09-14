@@ -47,43 +47,56 @@ var renderFavourite = function (favouriteListing) {
     console.log(e);
     const target = e.target;
     if (target.matches("#view-button")) {
-      renderImg(listing);
+      renderImg(favouriteListing);
       viewModal();
       console.log("viewbutton is clicked");
     } else if (target.matches("#remove-button")) {
-      removeFromFavourites(favouriteListing.id);
       listingEl.remove();
       // 5. delete the element off the page - to do so, you need to query select the container and use the .remove() method to remove it from DOM
     }
   });
 };
 
-//Remove a listing from favourites
-var removeFromFavourites = function (listingIdToBeDeleted) {
-  // 1. load the existing favs (existingFavs)
-  var existingFavs = JSON.parse(localStorage.getItem("favProp"));
-  // 2. create a newFavs array and initialize to an empty array []
-  if (newFavs == null) {
-    newFavs = [];
-  }
-  // 3. loop through existingFavs and if the fav.id does not match listingIdToBeDeleted -> then push the fav into the newFavs array
-  for (let i = 0; i < newFavs; i++) {
-    const newFavs = listingIdToBeDeleted[i];
-    renderFavourite(newFavs);
-  }
-  // 4. at the end json parse the newFavs and set to local storage
-  locateStorage.clear("");
+let renderImg = function (favouriteListing) {
+  var modalEL = $("#img-modal").addClass("modal").html(`
 
-  console.log("delete");
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Check out these shots!</p>
+      <button  id="close-button" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <img  src=${favouriteListing.media[0].url}/>
+      <img  src=${favouriteListing.media[1].url}/>
+      <img  src=${favouriteListing.media[2].url}/>
+      <img  src=${favouriteListing.media[3].url}/>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+  </div> 
+  `);
+
+  //event del to save button
+  $("#img-modal").append(modalEL);
+
+  modalEL.on("click", function (e) {
+    console.log(e);
+    const target = e.target;
+    if (target.matches("#close-button")) {
+      closeModal();
+      console.log("close button is clicked");
+    }
+  });
 };
 
-// var
+let viewModal = function () {
+  $("#img-modal").addClass("is-active");
+};
 
-//Clear all favourites - add a main button
-// clearEl.addEventListener("click", function () {
-//   localStorage.clear();
-//   searchHistory = [];
-//   renderSearchHistory();
-// })
+let closeModal = function () {
+  $("#img-modal").removeClass("is-active");
+};
 
 loadFavourites();
