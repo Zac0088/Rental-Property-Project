@@ -82,6 +82,28 @@ var renderListing = function (listing) {
       renderImg(listing);
       viewModal();
       console.log("viewbutton is clicked");
+    } else if (target.matches("#save-button")) {
+      // The save button is disabled if the listing is already saved to favourites
+      $(target).attr("disabled", true);
+      var myFavourites = JSON.parse(localStorage.getItem("favProp"));
+      //If there are no favourite listings there will be an empty array
+      if (myFavourites == null) {
+        myFavourites = [];
+      }
+      var isAlreadyFavourited = false;
+
+      for (var i = 0; i < myFavourites.length; i++) {
+        var favouriteListing = myFavourites[i];
+        if (favouriteListing.id === listing.id) {
+          isAlreadyFavourited = true;
+        }
+      }
+      if (!isAlreadyFavourited) {
+        myFavourites.push(listing);
+        localStorage.setItem("favProp", JSON.stringify(myFavourites));
+      } else {
+        console.log("Listing already in favourites", listing);
+      }
     }
   });
 };
@@ -137,7 +159,7 @@ var initialize = function () {
   if (postcode) {
     getListing(postcode);
   }
-}
+};
 
 $(document).ready(function () {
   initialize();
@@ -149,9 +171,8 @@ $(document).ready(function () {
   });
 });
 
-
 function navigateToListing(postcode) {
-  document.location.assign("./listings.html?postcode=" + postcode)
+  document.location.assign("./listings.html?postcode=" + postcode);
 }
 
 window.navigateToListing = navigateToListing;
