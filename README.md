@@ -15,7 +15,7 @@ SO THAT I can save the properties to my favorites to view later
 
 ## Deployed Webpage
 
-Link to deployed website: 
+Link to deployed website: https://zac0088.github.io/Rental-Property-Project/
 
 Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 
