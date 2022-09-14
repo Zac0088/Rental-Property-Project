@@ -26,7 +26,7 @@ Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 GIVEN the user is presented with a webpage and with functionality of the page. 
 THEN the user is presented with a search function box.
 WHEN a search query (location) is entered (using the auto complete function), 
-THEN the user presented with property listings in the suburb/ city (Australia)- with a decriprion of the property, images, pricing and realtor for the listing.
+THEN the user presented with property listings in the suburb/ city (Australia)- with a description of the property, images, pricing and realtor for the listing.
 WHEN the user selects a listing, a modal will pop up providing further details of the selected listing - further images of the property.
 WHEN the user clicks on the close button,
 THEN the webpage returns to the listings search page.
@@ -40,28 +40,34 @@ THEN the user will also have the option to remove the listings they have saved
 
 ## Development Technologies Used 
 
- - CSS Framework - Bulma
- - Use of modals
- - JQuery
- - Two Server side APIs - (1) Domain and (2) Google Place - Autocomplete
- - Interactive - respond to user input - search, save and query function
- - Responsive - update searches, mobile friendly
- - Use client-side storage to store persistent data - save function
+  - CSS Framework - Bulma
+  - Use of modals
+  - JQuery
+  - Two Server side APIs - (1) Domain and (2) Google Place - Autocomplete
+  - Interactive - respond to user input - search, save and query function
+  - Responsive - update searches, mobile friendly
+  - Use client-side storage to store persistent data - save function
 
 
 ## Direction for Future Development 
 
 
- - Functioning storage button - to clear data from local storage
- - Search for properties "Around Me" function
- - Google street view
- - Add more listings to the page as the user scrolls down the page
+  - Functioning storage button - to clear data from local storage
+  - Search for properties "Around Me" function
+  - Google street view
+  - Add more listings to the page as the user scrolls down the page
 
 
  ## Referencing
 
- 
-  - Bulma: https://bulma.io
-  - Domain API: https://developer.domain.com.au/docs/v1/apis/pkg_agents_listings/references/listings_detailedresidentialsearch
-  - Google Place - Autocomplete: https://developers.google.com/maps/documentation/javascript/place-autocomplete 
+
+   - Bulma: https://bulma.io
+   - Domain API: https://developer.domain.com.au/docs/v1/apis/pkg_agents_listings/references/listings_detailedresidentialsearch
+   - Google Place - Autocomplete: https://developers.google.com/maps/documentation/javascript/place-autocomplete 
+
+  ## Authors
+
+    - Alex Mastroianni
+    - Bhavika Mevada
+    - Zachary Smart
 
