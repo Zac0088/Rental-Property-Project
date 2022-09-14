@@ -15,7 +15,7 @@ SO THAT I can save the properties to my favorites to view later
 
 ## Deployed Webpage
 
-Link to website:
+Link to deployed website: 
 
 Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 
@@ -33,6 +33,9 @@ WHEN the user clicks on the close button,
 THEN the webpage returns to the listings search page. 
 WHEN the user selects "My Favourites" button,
 THEN the user will be presented with the listings they have selected "Add to favourites" whilst browsing.
+GIVEN the user is presented "My Favourites" page, 
+THEN the user will be able to view the listings they have selected to save,
+THEN the user will also have the ption to remove the lsitings they have saved
 
 ## Development Technologies used 
 
