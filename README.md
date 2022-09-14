@@ -26,16 +26,32 @@ Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 GIVEN the user is presented with a webpage and with functionality of the page. 
 THEN the user is presented with a search function box.
 WHEN a search query (location) is entered (using the auto complete function), 
+
+<img src= '.Images/main-page.png'>
+
 THEN the user presented with property listings in the suburb/ city (Australia)- with a description of the property, images, pricing and realtor for the listing.
+
+<img src= '.Images/search.png'>
+
 WHEN the user selects a listing, a modal will pop up providing further details of the selected listing - further images of the property.
+
+<img src= '.Images/modal.png'>
+
 WHEN the user clicks on the close button,
 THEN the webpage returns to the listings search page.
 WHEN the user click on the ‘Save’ function to add to favourites,
 THEN the selected listings will be added to the 'My Favourites' page. 
+
+<img src= '.Images/save-function.png'>
+
 WHEN the user selects 'My Favourites' page, 
 THEN the user will be presented with the listings they have selected to 'Save' whilst browsing.
 THEN the user will be able to view the listings, and
-THEN the user will also have the option to remove the listings they have saved
+THEN the user will also have the option to remove the listings they have saved.
+
+<img src= '.Images/favourites.png'>
+
+
 ```
 
 ## Development Technologies Used 
@@ -55,7 +71,7 @@ THEN the user will also have the option to remove the listings they have saved
   - Functioning storage button - to clear data from local storage
   - Search for properties "Around Me" function
   - Google street view
-  - Add more listings to the page as the user scrolls down the page
+  - Add more listings to the page as the user scrolls down the page with the use of Bulma Carousel Hero 
 
 
  ## Referencing
