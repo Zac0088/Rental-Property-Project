@@ -22,21 +22,45 @@ Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 
 
 ## Acceptance criteria
-```md
+
 GIVEN the user is presented with a webpage and with functionality of the page. 
+
 THEN the user is presented with a search function box.
+
 WHEN a search query (location) is entered (using the auto complete function), 
+
+<img width="1315" alt="main-page" src="https://user-images.githubusercontent.com/109460560/190347538-e77e22c6-f10d-4952-b7f1-d05965efe14f.png">
+
+
 THEN the user presented with property listings in the suburb/ city (Australia)- with a description of the property, images, pricing and realtor for the listing.
+
+<img width="1320" alt="search" src="https://user-images.githubusercontent.com/109460560/190347595-6db1aff8-9c86-435c-b83c-a6a721d1f953.png">
+
+
 WHEN the user selects a listing, a modal will pop up providing further details of the selected listing - further images of the property.
+
+<img width="1311" alt="modal" src="https://user-images.githubusercontent.com/109460560/190347645-b8ce9c60-1596-40bd-803a-7b73647b8bb9.png">
+
 WHEN the user clicks on the close button,
+
 THEN the webpage returns to the listings search page.
+
 WHEN the user click on the ‘Save’ function to add to favourites,
+
 THEN the selected listings will be added to the 'My Favourites' page. 
+
+<img width="1326" alt="save-function" src="https://user-images.githubusercontent.com/109460560/190347770-e4187520-3ac6-45ff-9fd8-4ecd5eddab14.png">
+
 WHEN the user selects 'My Favourites' page, 
+
 THEN the user will be presented with the listings they have selected to 'Save' whilst browsing.
+
 THEN the user will be able to view the listings, and
-THEN the user will also have the option to remove the listings they have saved
-```
+
+THEN the user will also have the option to remove the listings they have saved.
+
+<img width="1325" alt="favourites" src="https://user-images.githubusercontent.com/109460560/190347856-911d09d1-ed7e-40eb-bfe9-49822a849bab.png">
+
 
 ## Development Technologies Used 
 
