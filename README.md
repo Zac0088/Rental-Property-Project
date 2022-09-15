@@ -22,7 +22,7 @@ Link to Github: https://github.com/Zac0088/Rental-Property-Project.git
 
 
 ## Acceptance criteria
-```md
+
 GIVEN the user is presented with a webpage and with functionality of the page. 
 THEN the user is presented with a search function box.
 WHEN a search query (location) is entered (using the auto complete function), 
@@ -52,7 +52,7 @@ THEN the user will also have the option to remove the listings they have saved.
 <img src= '.Images/favourites.png'>
 
 
-```
+
 
 ## Development Technologies Used 
 
